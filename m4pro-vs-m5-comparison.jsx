@@ -6,8 +6,8 @@ const MACHINES = [
     tag: "YOUR MACHINE",
     tagColor: "#845EF7",
     release: "Nov 2024",
-    startPrice14: "$1,999",
-    startPrice16: "$2,499",
+    startPrice14: "$1,999 (₹1,99,900)",
+    startPrice16: "$2,499 (₹2,49,900)",
     process: "2nd-gen 3nm",
     architecture: "Single-die SoC",
     transistors: "55 billion",
@@ -56,8 +56,8 @@ const MACHINES = [
     tag: "NEW",
     tagColor: "#00C9A7",
     release: "Mar 2026",
-    startPrice14: "$2,199",
-    startPrice16: "$2,699",
+    startPrice14: "$2,199 (₹2,49,900)",
+    startPrice16: "$2,699 (₹2,99,900)",
     process: "3rd-gen 3nm (Fusion)",
     architecture: "Dual-die Fusion SoC",
     transistors: "~60 billion (est.)",
@@ -106,8 +106,8 @@ const MACHINES = [
     tag: "MAXED OUT",
     tagColor: "#FF6B6B",
     release: "Mar 2026",
-    startPrice14: "$3,599",
-    startPrice16: "$3,899",
+    startPrice14: "$3,599 (₹3,99,900)",
+    startPrice16: "$3,899 (₹4,29,900)",
     process: "3rd-gen 3nm (Fusion)",
     architecture: "Dual-die Fusion SoC",
     transistors: "~115 billion (est.)",
@@ -414,7 +414,7 @@ export default function ComparisonTable() {
             <div>
               <div style={{ fontSize: 14, fontWeight: 600, color: "#00C9A7", marginBottom: 6 }}>M5 Pro</div>
               <div style={{ fontSize: 12, color: "#ffffff55", lineHeight: 1.7 }}>
-                4 more CPU cores (18 vs 14) with new dual-die Fusion Architecture. Same 20-core GPU count but Neural Accelerators in every core - 4x faster LLM prompts. Max RAM goes to 64GB. 12% more bandwidth (307 vs 273 GB/s). 2x faster SSD. Wi-Fi 7 + Bluetooth 6 via new N1 chip. Same TB5, same display, same battery. Starts $200 more but base storage is 1TB vs 512GB.
+                4 more CPU cores (18 vs 14) with new dual-die Fusion Architecture. Same 20-core GPU count but Neural Accelerators in every core - 4x faster LLM prompts. Max RAM goes to 64GB. 12% more bandwidth (307 vs 273 GB/s). 2x faster SSD. Wi-Fi 7 + Bluetooth 6 via new N1 chip. Same TB5, same display, same battery. Starts $200 (₹50,000) more but base storage is 1TB vs 512GB.
               </div>
             </div>
             <div>

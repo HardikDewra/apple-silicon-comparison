@@ -65,9 +65,34 @@
     }
     .accent-1 { border-top: 3px solid #845EF7; }
     .accent-2 { border-top: 3px solid #00C9A7; }
+    #theme-toggle {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 9999;
+      padding: 8px 16px;
+      border: 1px solid #555;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      background: #222;
+      color: #eee;
+      transition: background 0.2s, color 0.2s;
+    }
+    html.light-mode body { background: #f5f5f5; color: #111; }
+    html.light-mode h1 { color: #111; }
+    html.light-mode .card h2 { color: #111; }
+    html.light-mode .card p { color: #666; }
+    html.light-mode a.card { background: #fff; border-color: #ddd; }
+    html.light-mode a.card:hover { border-color: #bbb; }
+    html.light-mode p { color: #666; }
+    html.light-mode #theme-toggle { background: #f0f0f0; color: #222; border-color: #ccc; }
   </style>
 </head>
 <body>
+  <button id="theme-toggle" onclick="document.documentElement.classList.toggle('light-mode'); this.textContent = document.documentElement.classList.contains('light-mode') ? 'Dark Mode' : 'Light Mode'">Light Mode</button>
   <div class="container">
     <h1>Apple Silicon Comparison</h1>
     <p>Interactive dashboards comparing every Apple Silicon chip</p>

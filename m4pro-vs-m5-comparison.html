@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M4 Pro vs M5 Comparison</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    fetch('m4pro-vs-m5-comparison.jsx')
+      .then(r => r.text())
+      .then(code => {
+        code = code.replace(/^import\s.*?from\s.*?;?\s*$/gm, '');
+        code = code.replace('export default ', '');
+        const preamble = `const { useState } = React;\n`;
+        const postamble = `
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(ComparisonTable));
+`;
+        const fullCode = preamble + code + postamble;
+        const output = Babel.transform(fullCode, { presets: ['react'] }).code;
+        eval(output);
+      })
+      .catch(err => {
+        document.getElementById('root').textContent = 'Failed to load comparison: ' + err.message;
+      });
+  </script>
+</body>
+</html>

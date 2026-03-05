@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Silicon Dashboard</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/recharts@2/umd/Recharts.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    fetch('apple-silicon-comparison.jsx')
+      .then(r => r.text())
+      .then(code => {
+        code = code.replace(/^import\s.*?from\s.*?;?\s*$/gm, '');
+        code = code.replace('export default ', '');
+        const preamble = `
+const { useState } = React;
+const {
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
+  RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+  LineChart, Line, CartesianGrid, Legend, AreaChart, Area
+} = Recharts;
+`;
+        const postamble = `
+ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(AppleSiliconDashboard));
+`;
+        const fullCode = preamble + code + postamble;
+        const output = Babel.transform(fullCode, { presets: ['react'] }).code;
+        eval(output);
+      })
+      .catch(err => {
+        document.getElementById('root').textContent = 'Failed to load dashboard: ' + err.message;
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Silicon Comparison</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0a0a1a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    p {
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 48px;
+    }
+    .cards {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    a.card {
+      display: block;
+      width: 340px;
+      padding: 32px 28px;
+      background: #12122a;
+      border: 1px solid #ffffff10;
+      border-radius: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    a.card:hover {
+      border-color: #ffffff30;
+      transform: translateY(-2px);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 0;
+      line-height: 1.5;
+    }
+    .accent-1 { border-top: 3px solid #845EF7; }
+    .accent-2 { border-top: 3px solid #00C9A7; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Apple Silicon Comparison</h1>
+    <p>Interactive dashboards comparing every Apple Silicon chip</p>
+    <div class="cards">
+      <a class="card accent-1" href="apple-silicon-comparison.html">
+        <h2>Full Silicon Dashboard</h2>
+        <p>M1 through M5 across Base, Pro, and Max tiers - benchmarks, specs, charts, and trends.</p>
+      </a>
+      <a class="card accent-2" href="m4pro-vs-m5-comparison.html">
+        <h2>M4 Pro vs M5 Comparison</h2>
+        <p>Side-by-side detailed spec comparison between M4 Pro and M5 chips.</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
